@@ -109,20 +109,12 @@ p {
     100% { box-shadow: 0 0 10px rgba(0,119,255,0.6); }
 }
 
-/* 🔥 QR CODE */
-.qr {
-    margin-top: 15px;
-}
-
+/* QR */
 .qr img {
     width: 120px;
+    margin-top: 10px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-.qr img:hover {
-    transform: scale(1.1);
 }
 </style>
 </head>
@@ -130,7 +122,7 @@ p {
 <body>
 
 <div class="container">
-    <img src="foto.jpg" alt="Foto Profil" class="profile">
+    <img src="foto.jpg" class="profile">
 
     <h1>DILSA IHSAN PADLILLAH</h1>
     <p>Kelas: XII TKJ 4</p>
@@ -148,31 +140,26 @@ p {
         <a href="https://tiktok.com/@asadie.ll_" target="_blank">TikTok</a>
     </div>
 
-    <!-- 🔥 QR CODE -->
+    <!-- QR -->
+    <h3>Scan Website Saya</h3>
     <div class="qr">
-        <h3>Scan Website Saya</h3>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dilsaihsan25-wq.github.io/Profil-saya-/">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dilsai.github.io/nama-repo/">
     </div>
-
 </div>
 
-<!-- 🔥 TOMBOL MUSIK -->
+<!-- TOMBOL -->
 <button class="music-btn" onclick="toggleMusic()" id="btnMusic">
     🎵
 </button>
 
-<!-- AUDIO -->
-<audio autoplay loop muted id="musik">
+<!-- AUDIO (FIX) -->
+<audio id="musik" loop>
     <source src="musik.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 var musik = document.getElementById("musik");
 var btn = document.getElementById("btnMusic");
-
-document.addEventListener("click", function() {
-    musik.muted = false;
-});
 
 function toggleMusic() {
     if (musik.paused) {
