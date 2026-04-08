@@ -25,11 +25,6 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     text-align: center;
-    transition: transform 0.3s;
-}
-
-.container:hover {
-    transform: scale(1.03);
 }
 
 /* FOTO */
@@ -42,15 +37,6 @@ body {
     margin-bottom: 15px;
 }
 
-h1 {
-    margin: 10px 0;
-}
-
-p {
-    margin: 5px 0;
-    color: #555;
-}
-
 /* SOSIAL */
 .social a {
     display: inline-block;
@@ -61,7 +47,6 @@ p {
     color: black;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 .social a:hover {
@@ -69,52 +54,26 @@ p {
     color: white;
 }
 
-/* 🔥 TOMBOL MUSIK */
+/* TOMBOL MUSIK */
 .music-btn {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
     width: 70px;
     height: 70px;
     border-radius: 50%;
     border: none;
-    
     background: linear-gradient(135deg, #74ebd5, #0077ff);
     color: white;
     font-size: 28px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(0,119,255,0.6);
-    transition: 0.3s;
-}
-
-.music-btn:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-    box-shadow: 0 0 30px rgba(0,119,255,0.9);
-}
-
-.music-btn.playing {
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 10px rgba(0,119,255,0.6); }
-    50% { box-shadow: 0 0 30px rgba(0,119,255,1); }
-    100% { box-shadow: 0 0 10px rgba(0,119,255,0.6); }
 }
 
 /* QR */
 .qr img {
     width: 120px;
     margin-top: 10px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 </style>
 </head>
@@ -140,19 +99,19 @@ p {
         <a href="https://tiktok.com/@asadie.ll_" target="_blank">TikTok</a>
     </div>
 
-    <!-- QR -->
+    <!-- QR FIX -->
     <h3>Scan Website Saya</h3>
     <div class="qr">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dilsai.github.io/nama-repo/">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dilsaihsan25-wq.github.io/Profil-saya-/">
     </div>
 </div>
 
-<!-- TOMBOL -->
+<!-- TOMBOL MUSIK -->
 <button class="music-btn" onclick="toggleMusic()" id="btnMusic">
-    🎵
+🎵
 </button>
 
-<!-- AUDIO (FIX) -->
+<!-- AUDIO -->
 <audio id="musik" loop>
     <source src="musik.mp3" type="audio/mpeg">
 </audio>
@@ -165,11 +124,9 @@ function toggleMusic() {
     if (musik.paused) {
         musik.play();
         btn.innerHTML = "⏸️";
-        btn.classList.add("playing");
     } else {
         musik.pause();
         btn.innerHTML = "🎵";
-        btn.classList.remove("playing");
     }
 }
 </script>
